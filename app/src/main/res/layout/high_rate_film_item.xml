@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:padding="10dp">
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/img_backdrop" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="4:3"
+            android:scaleType="fitXY"/>
+    <ImageView
+            android:layout_width="59dp"
+            android:layout_height="92dp" app:srcCompat="@drawable/play_a" android:id="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="@+id/img_backdrop"
+            app:layout_constraintStart_toStartOf="@+id/img_backdrop" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintBottom_toBottomOf="@+id/img_backdrop"
+            app:layout_constraintTop_toTopOf="@+id/img_backdrop"
+            app:layout_constraintDimensionRatio="1:1" app:layout_constraintVertical_bias="0.494"/>
+</android.support.constraint.ConstraintLayout>
