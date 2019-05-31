@@ -14,16 +14,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DetailPresenter(val view: IDetail.View) : IDetail.Presenter {
-    override fun showDetail(context: Context, film: Film) {
-        val intent = Intent(context, Film_detail::class.java)
-        intent.putExtra("Film", film);
-        ContextCompat.startActivity(context, intent, null)
-    }
 
     override fun getRecommendations(id: Int?) {
         api.createService().doGetRecommendations(id).enqueue(object : Callback<Films>{
             override fun onFailure(call: Call<Films>?, t: Throwable?) {
                 println(t.toString())
+
 
             }
 

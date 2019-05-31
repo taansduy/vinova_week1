@@ -1,5 +1,6 @@
 package com.example.asus.week1.View
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -13,6 +14,7 @@ import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.activity_main.*
 import android.os.Parcelable
 import android.sax.EndTextElementListener
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView.LayoutManager
 import android.view.MotionEvent
 import com.example.asus.week1.utils.EndlessScrollListener
@@ -72,7 +74,9 @@ class MainActivity : AppCompatActivity(),INowPlaying.View {
         myadapter = FilmAdapter(this)
         var itemClickListener=object: onItemClickListener {
             override fun onItemClick(item: Film) {
-                presenter.showDetail(this@MainActivity,item)
+                val intent = Intent(this@MainActivity, Film_detail::class.java)
+                intent.putExtra("Film", item);
+                ContextCompat.startActivity(this@MainActivity, intent, null)
             }
         }
         myadapter?.setItemClickListener(itemClickListener)

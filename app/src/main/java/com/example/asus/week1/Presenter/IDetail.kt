@@ -19,6 +19,5 @@ interface IDetail {
     interface Presenter {
         fun getTrailer(id:Int?)
         fun getRecommendations(id:Int?)
-        fun showDetail(context: Context, film: Film)
     }
 }

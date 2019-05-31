@@ -15,6 +15,5 @@ interface INowPlaying {
     interface Presenter {
         fun getNowPlaying(page: Int)
         fun refreshNowPlaying(page: Int)
-        fun showDetail(context: Context, film: Film)
     }
 }

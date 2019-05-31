@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_film_detail.*
 import com.example.asus.week1.BuildConfig.YOUTUBE_API_KEY
 import android.content.Intent
 import android.os.Build
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
 import android.view.View
@@ -104,7 +105,9 @@ class Film_detail :  IDetail.View, YouTubeBaseActivity() {
         myadapter = Recommendation_Film_Adapter(this)
         var itemClickListener=object: onItemClickListener {
             override fun onItemClick(item: Film) {
-                presenter.showDetail(this@Film_detail,item)
+                val intent = Intent(this@Film_detail, Film_detail::class.java)
+                intent.putExtra("Film", item);
+                ContextCompat.startActivity(this@Film_detail, intent, null)
             }
         }
         myadapter?.setItemClickListener(itemClickListener)

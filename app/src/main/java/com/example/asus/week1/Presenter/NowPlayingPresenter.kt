@@ -15,11 +15,6 @@ import retrofit2.Response
 
 
 class NowPlayingPresenter(val view: INowPlaying.View) : INowPlaying.Presenter{
-    override fun showDetail(context: Context, film: Film) {
-        val intent = Intent(context, Film_detail::class.java)
-        intent.putExtra("Film", film);
-        startActivity(context,intent,null)
-    }
 
     override fun refreshNowPlaying(page: Int) {
         api.createService().doGetListNowPlayingMovies(page).enqueue(object : Callback<Films>{

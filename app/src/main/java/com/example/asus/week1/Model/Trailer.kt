@@ -21,9 +21,6 @@ class Trailers {
     fun setId(id: Int?) {
         this.id = id
     }
-
-
-
 }
 class Trailer {
     var id: String? = null
